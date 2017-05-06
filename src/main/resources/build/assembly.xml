@@ -1,0 +1,42 @@
+<assembly>
+	<id>release</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<baseDirectory>base-java</baseDirectory>
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<fileSets>
+		<fileSet>
+			<directory>src/main/resources/config</directory>
+			<outputDirectory>/config</outputDirectory>
+		</fileSet>
+
+		<fileSet>
+			<directory>bin</directory>
+			<outputDirectory>/bin</outputDirectory>
+		</fileSet>
+
+	</fileSets>
+	
+	<dependencySets>
+		<dependencySet>
+			<useProjectArtifact>true</useProjectArtifact>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>com.yrl.base:base-java</include>
+			</includes>
+		</dependencySet>
+
+		<dependencySet>
+			<useProjectArtifact>true</useProjectArtifact>
+			<outputDirectory>lib</outputDirectory>
+			<scope>runtime</scope>
+			<excludes>
+				<exclude>com.yrl.base:base-java</exclude>
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+</assembly>
+
+
